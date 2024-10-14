@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FastGpt + Oneapi + Gemma:2b + M3E + Mongo + Pg + Ollama-webui 搭建的本地大模型知识库 :::info AI大模型搭建参考文档：[https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484&#x2F;](https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2024/10/14/%E6%9C%AC%E5%9C%B0AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="FastGpt + Oneapi + Gemma:2b + M3E + Mongo + Pg + Ollama-webui 搭建的本地大模型知识库 :::info AI大模型搭建参考文档：[https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484&#x2F;](https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2024-10-14T00:46:41.170Z">
+<meta property="article:modified_time" content="2024-10-14T00:46:41.923Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/10/14/%E6%9C%AC%E5%9C%B0AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-14 08:46:41'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-10-14T00:46:41.170Z" title="Created 2024-10-14 08:46:41">2024-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-10-14T00:46:41.923Z" title="Updated 2024-10-14 08:46:41">2024-10-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><font style="color:rgb(34, 34, 34);">FastGpt + Oneapi + Gemma:2b + M3E + Mongo + Pg + Ollama-webui 搭建的本地大模型知识库</font></p>
+<p>:::info</p>
+<h3 id="xukox">AI大模型搭建参考文档：[https://www.toutiao.com/article/7341324149756969484/](https://www.toutiao.com/article/7341324149756969484/)</h3>
+:::
+
+
+
+
+
+
+
+<h2 id="AZ7jz">一、 **<font style="color:#222222;background-color:#ffffff;">升级python 、 pip 并安装docker</font>**</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1. 更新yum</span><br><span class="line">sudo yum update</span><br><span class="line">2.安装EPEL源</span><br><span class="line">sudo yum install epel-release</span><br><span class="line">3.安装Python</span><br><span class="line">sudo yum install python3</span><br><span class="line">4.验证安装</span><br><span class="line">python3 --version</span><br><span class="line">5.安装pip</span><br><span class="line">sudo yum install python3-pip</span><br><span class="line">6.更新pip</span><br><span class="line">pip3 install --upgrade pip</span><br><span class="line">7. 卸载旧版本的Docker（如果有）</span><br><span class="line">sudo yum remove docker docker-client docker-client-latest docker-common  docker-latest  docker-latest-logrotate  docker-logrotate docker-engine</span><br><span class="line">8.安装必要的依赖包</span><br><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">9.设置Docker的yum源</span><br><span class="line">sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">10.安装Docker Engine</span><br><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line">11.启动Docker服务</span><br><span class="line">sudo systemctl start docker</span><br><span class="line">12.设置Docker开机自启</span><br><span class="line">sudo systemctl enable docker</span><br><span class="line">13.验证Docker安装</span><br><span class="line">sudo docker run hello-world</span><br><span class="line">14.安装 docker-compose</span><br><span class="line">wget https://github.com/docker/compose/releases/download/v2.25.0/docker-compose-Linux-x86_64</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="X3wMj">二、<font style="color:rgb(34, 34, 34);">安装 M3E</font></h2>
+:::info
+<font style="color:rgb(34, 34, 34);">M3E安装细节参考：</font>
+
+<p><a target="_blank" rel="noopener" href="https://www.toutiao.com/item/7340953638493241875/"><font style="color:#117CEE;">https://www.toutiao.com/item/7340953638493241875/</font></a></p>
+<p>:::</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 安装M3E强烈建议按着git步骤操作</span><br><span class="line">yum install git-lfs</span><br><span class="line">git lfs install</span><br><span class="line">git clone https://www.modelscope.cn/Jerry0/m3e-base.git</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install lsof</span><br><span class="line">sudo lsof -i:端口号</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:rgb(34, 34, 34);">如果输出为空，说明端口可用，比如m3e 这里使用了 6008端口</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name m3e -p 6008:6008 registry.cn-hangzhou.aliyuncs.com/fastgpt_docker/m3e-large-api</span><br></pre></td></tr></table></figure>
+
+<h3 id="z1Jme">2.1</h3>
+<font style="color:rgb(34, 34, 34);">M3E 区分 small\base\large 三个版本，由于本机性能有限，这里按装base版本</font>
+
+<p>:::info<br><font style="color:rgb(34, 34, 34);">其官方文档地址</font>：</p>
+<p><a target="_blank" rel="noopener" href="https://huggingface.co/moka-ai/m3e-base">https://huggingface.co/moka-ai/m3e-base</a></p>
+<p>:::</p>
+<p><font style="color:rgb(34, 34, 34);">由于国外的原因，咱们访问很慢，可以通过国内镜像(<a target="_blank" rel="noopener" href="https://hf-mirror.com/)%E6%9D%A5%E8%AE%BF%E9%97%AE%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BF%AE%E6%94%B9%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">https://hf-mirror.com/)来访问，我们修改下环境变量</a>:</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export HF_ENDPOINT=https://hf-mirror.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="bvcVc">2.2  <font style="color:#000000;">先安装 sentence-transformers</font></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U sentence-transformers</span><br></pre></td></tr></table></figure>
+
+<h3 id="kNIu4">2.3  <font style="color:rgb(34, 34, 34);">启用python，命令行敲入 python，由于本地安装名字为 python3，故命令行如下：</font></h3>
+![](https://cdn.nlark.com/yuque/0/2024/png/33682219/1711699730398-8648b26d-8521-43e8-8b61-2896505e7949.png)
+
+<h3 id="fO5r7">2.4  <font style="color:rgb(34, 34, 34);">拷贝如下代码到python环境中</font></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from sentence_transformers import SentenceTransformer</span><br><span class="line">model = SentenceTransformer(&#x27;./m3e-base&#x27;)</span><br><span class="line">sentences = [</span><br><span class="line">    &#x27;* Moka 此文本嵌入模型由 MokaAI 训练并开源，训练脚本使用 uniem&#x27;,</span><br><span class="line">    &#x27;* Massive 此文本嵌入模型通过**千万级**的中文句对数据集进行训练&#x27;,</span><br><span class="line">    &#x27;* Mixed 此文本嵌入模型支持中英双语的同质文本相似度计算，异质文本检索等功能，未来还会支持代码检索，ALL in one&#x27;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"># 通过model.encode()函数转换成嵌入向量</span><br><span class="line">embeddings = model.encode(sentences)</span><br><span class="line"></span><br><span class="line"># 输出句子和对应的嵌入向量查看</span><br><span class="line">for sentence, embedding in zip(sentences, embeddings):</span><br><span class="line">    print(&quot;Sentence:&quot;, sentence)</span><br><span class="line">    print(&quot;Embedding:&quot;, embedding)</span><br><span class="line">    print(&quot;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="注意，在输出-“print-“”-”的时候，需要按下-shift-enter按键；否则可能会一直等待中"><a href="#注意，在输出-“print-“”-”的时候，需要按下-shift-enter按键；否则可能会一直等待中" class="headerlink" title="注意，在输出 “print(“”)”的时候，需要按下 shift+enter按键；否则可能会一直等待中"></a>注意，在输出 “print(“”)”的时候，需要按下 shift+enter按键；否则可能会一直等待中</h2><p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711700802644-2b347e30-6e68-491d-b5eb-bdabb0a17484.png"></p>
+<h3 id="bprOz">2.5 <font style="color:rgb(34, 34, 34);">我们把向量图形化，先按 ctrl+z 退出python环境，执行如下命令，安装图库：</font></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure>
+
+
+
+<p><font style="color:rgb(34, 34, 34);">下载完成后，重新 敲入 python命令 （我本地是 python3)，在python环境敲入如下代码：</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from sklearn.manifold import TSNE</span><br><span class="line">from sklearn.decomposition import PCA</span><br><span class="line">from sentence_transformers import SentenceTransformer</span><br><span class="line">embed_model= SentenceTransformer(&#x27;./m3e-base&#x27;)</span><br><span class="line">sentences = [&quot;爱他美&quot;, &quot;什么他美来着&quot;, &quot;爱他美是什么&quot;, &quot;爱ta美&quot;, &quot;爱他mei&quot;, &quot;ata美&quot;, &quot;aitamei&quot;, &quot;atm&quot;]</span><br><span class="line"> </span><br><span class="line">labels = [0, 0, 0, 0, 1, 1, 2, 3]</span><br><span class="line">vectors = embed_model.encode(sentences)</span><br><span class="line">pca = PCA(n_components=3)</span><br><span class="line">data_transformed = pca.fit_transform(vectors)</span><br><span class="line">data_transformed.shape</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_subplot(111, projection=&#x27;3d&#x27;)</span><br><span class="line"></span><br><span class="line">colors = [&#x27;r&#x27;, &#x27;g&#x27;, &#x27;b&#x27;, &#x27;y&#x27;]</span><br><span class="line">for i in range(len(data_transformed)):</span><br><span class="line">    ax.scatter(data_transformed[i, 0], data_transformed[i, 1],  data_transformed[i, 2], c=colors[labels[i]])</span><br><span class="line"></span><br><span class="line">ax.set_xlabel(&#x27;X&#x27;)</span><br><span class="line">ax.set_ylabel(&#x27;Y&#x27;)</span><br><span class="line">ax.set_zlabel(&#x27;Z&#x27;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>执行完成后可能会出现如下<font style="color:rgb(34, 34, 34);">3D 向量图，也可能不会出现（此步骤为测试，并不重要）</font></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711700974827-bdea88e1-7f8e-499f-9ec6-b67a115e7ce6.png"></p>
+<h3 id="EFxtf">2.6 （此步骤目的：<font style="color:rgb(0, 0, 0);">开源中文Embedding模型M3E本地安装及接口API实现）</font></h3>
+<font style="color:rgb(34, 34, 34);">通过api对外提供服务：先退出python环境，安装Flask</font>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Flask</span><br></pre></td></tr></table></figure>
+
+
+
+<p><font style="color:rgb(34, 34, 34);">服务启动后，就可以通过post请求访问了：请按以下步骤进行操作验证（此步骤为测试，并不重要, 共需要2台终端进行测试验证）</font></p>
+<p><font style="color:rgb(34, 34, 34);">（1）在第1台终端 新建一个以 </font><font style="color:#DF2A3F;"> .py  </font><font style="color:#000000;">结尾的python脚本。这里以 1.py 为例子，python脚本内容如下。</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">### 在命令行执行 python3 1.py</span><br><span class="line"></span><br><span class="line">from flask import Flask, request, jsonify</span><br><span class="line">from sentence_transformers import SentenceTransformer</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">m3e_model =SentenceTransformer(&#x27;./m3e-base&#x27;)</span><br><span class="line">@app.route(&#x27;/encode&#x27;, methods=[&#x27;POST&#x27;])</span><br><span class="line">def encode_sentences():</span><br><span class="line">    data = request.json</span><br><span class="line">    sentences = data.get(&#x27;sentences&#x27;, [])</span><br><span class="line">    embeddings = m3e_model.encode(sentences)</span><br><span class="line">    response = [&#123;&#x27;sentence&#x27;: s, &#x27;embedding&#x27;: embedding.tolist()&#125; for s, embedding in zip(sentences, embeddings)]</span><br><span class="line">    return jsonify(response)</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run(debug=True)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711707737602-dc194763-38e3-4d3c-a014-a420715f83d3.png"></p>
+<p>（2）在第2台终端进行结果验证。</p>
+<p><font style="color:rgb(34, 34, 34);">在第1台终端执行完1.py脚本后，服务启动后，就可以通过post请求访问了。在第2台终端输入如下命令进行测试</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:5000/encode   -H &quot;Content-Type: application/json&quot;  -d &#x27;&#123;&quot;sentences&quot;: &quot;你好&quot;&#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>测试结果如下图所示</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711708772318-e403ee58-e6ec-464d-80df-6e8eaf6ca263.png"></p>
+<p><font style="color:#000000;"></font></p>
+<p><font style="color:#000000;"></font></p>
+<p><font style="color:#000000;"></font></p>
+<p><font style="color:rgb(34, 34, 34);">使用docker安装，需要简单了解几个命令，非常有用</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker stop m3e   	#停止这个容器</span><br><span class="line">docker start m3e  	#启动容器</span><br><span class="line">docker rm m3e     	#移除容器</span><br><span class="line">docker ps         	#查看容器进程</span><br><span class="line">docker logs m3e   	#查看日志</span><br><span class="line">docker rmi m3e    	#删除镜像</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="LIFVd"><font style="color:#000000;">三、</font><font style="color:rgb(34, 34, 34);">安装one-api</font></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name oneapi -d --restart always -p 4000:3000 -e TZ=Asia/Shanghai -v /data/llm/one-api:/data justsong/one-api</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="xvfvK">四、<font style="color:rgb(34, 34, 34);">安装fastGpt。操作步骤如下图所示</font></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir fastgpt</span><br><span class="line">cd fastgpt</span><br><span class="line">wget http://raw.githubusercontent.com/labring/FastGPT/main/files/deploy/fastgpt/docker-compose.yml</span><br><span class="line">wget https://raw.githubusercontent.com/labring/FastGPT/main/projects/app/data/config.json</span><br><span class="line"></span><br><span class="line">openssl rand -base64 756 &gt; ./mongodb.key</span><br><span class="line">chmod 600 ./mongodb.key</span><br><span class="line">chown 999:root ./mongodb.key</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker-compose pull</span><br><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 这里如果按着原文档 pip3 install docker-compose 安装可能会造成docker-compose的版本太低，可能会造成以上两条命令执行不成功。</span><br><span class="line">  如果出现报错解决方法步骤如下</span><br><span class="line">  (1)先 docker-compose -version 查看版本。这里建议为2.0.0以上的版本。</span><br><span class="line">  (2)如果按着原文档安装这里的下载的版本为 1.29.2 在这里可以使用以下命令移除docker-compose</span><br><span class="line">        sudo rm /usr/local/bin/docker-compose</span><br><span class="line">  (3)移除docker-compose 后使用 docker-compose -version 查看其版本，如果输出结果为 </span><br><span class="line">      docker-compose: command not found 说明移除成功，否则说明移除失败。</span><br><span class="line">  (4)docker-compose移除成功后，使用以下命令下载2.25.0版本的</span><br><span class="line">  wget https://github.com/docker/compose/releases/download/v2.25.0/docker-compose-Linux-x86_64 </span><br><span class="line">  (5)完成安装后使用以下命令验证的版本,最后给予其执行权限</span><br><span class="line">      sudo chmod +x /usr/local/bin/docker-compose </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="K4bMA">五、<font style="color:rgb(34, 34, 34);">初始化mongo数据库</font></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 查看 mongo 容器是否正常运行</span><br><span class="line">docker ps</span><br><span class="line"># 进入容器</span><br><span class="line">docker exec -it mongo bash</span><br><span class="line"></span><br><span class="line"># 连接数据库</span><br><span class="line">mongo -u myusername -p mypassword --authenticationDatabase admin </span><br><span class="line"></span><br><span class="line"># 初始化副本集。如果需要外网访问，mongo:27017 可以改成 ip:27017。</span><br><span class="line">#但是需要同时修改 FastGPT 连接的参数</span><br><span class="line">#（MONGODB_URI=mongodb://myname:mypassword@mongo:27017/fastgpt?authSource=admin =&gt; MONGODB_URI=mongodb://myname:mypassword@ip:27017/fastgpt?authSource=admin）</span><br><span class="line">rs.initiate(&#123;</span><br><span class="line">  _id: &quot;rs0&quot;,</span><br><span class="line">  members: [</span><br><span class="line">    &#123; _id: 0, host: &quot;mongo:27017&quot; &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br><span class="line"># 检查状态。如果提示 rs0 状态，则代表运行成功</span><br><span class="line">rs.status()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="eaBOX">六、<font style="color:rgb(34, 34, 34);">安装 ollama</font></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/ollama/ollama/releases/download/v0.1.27/ollama-linux-amd64</span><br><span class="line">scp -r ollama-linux-amd64  /usr/bin/ollama</span><br><span class="line"></span><br><span class="line">##拷贝ollama到/usr/bin之后，需要chmod一下否则systemctl start ollama是起不来的</span><br><span class="line">chmod +x /usr/bin/ollama</span><br><span class="line"></span><br><span class="line">## 在这里需要添加一个ollama用户，不然后续ollama服务状态可能不是running</span><br><span class="line">sudo useradd -r -s /bin/false -m -d /usr/share/ollama ollama</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">##首先</span><br><span class="line">vim  /etc/systemd/system/ollama.service</span><br><span class="line"></span><br><span class="line">##在 /etc/systemd/system/ollama.service添加以下内容</span><br><span class="line">[Unit]</span><br><span class="line">Description=Ollama Service</span><br><span class="line">After=network-online.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Environment=&quot;OLLAMA_HOST=0.0.0.0:11434&quot;</span><br><span class="line">ExecStart=/usr/bin/ollama serve</span><br><span class="line">User=ollama</span><br><span class="line">Group=ollama</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=3</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=default.target</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">##保存后执行</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl enable ollama</span><br><span class="line">systemctl start ollama</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#可以通过以下命令来查看日志</span><br><span class="line">journalctl -u ollama</span><br><span class="line"></span><br><span class="line">#查看状态</span><br><span class="line">systemctl status ollama</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#停止命令</span><br><span class="line">sudo systemctl stop ollama</span><br><span class="line">sudo systemctl disable ollama</span><br><span class="line"></span><br><span class="line">#删除命令</span><br><span class="line">sudo rm /etc/systemd/system/ollama.service</span><br><span class="line">sudo rm -r /usr/share/ollama</span><br><span class="line">sudo userdel ollama</span><br><span class="line">sudo groupdel ollama</span><br><span class="line"></span><br><span class="line">#开放防火墙命令</span><br><span class="line">sudo firewall-cmd --zone=public --add-port=11434/tcp --permanent</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="xxpUz">七、<font style="color:rgb(34, 34, 34);">安装Gemma:2b</font></h2>
+:::info
+<font style="color:rgb(34, 34, 34);">安装Gemma:2b参考</font>
+
+<p><a target="_blank" rel="noopener" href="https://www.toutiao.com/item/7338355730514330175/">https://www.toutiao.com/item/7338355730514330175/)</a>)</p>
+<p>:::</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ollama run gemma:2b  	#google 开源模型；</span><br><span class="line">ollama run qwen      	#阿里开源模型</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="v0Yjr">八、<font style="color:rgb(34, 34, 34);">安装 open-webui</font></h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#### 端口建议3000改为3100，不然会引起端口那冲突。</span><br><span class="line"></span><br><span class="line">docker run -d -p 3100:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:#000000;">（此步骤docker拉取镜像时间较长，完成后One API、open WebUI、FsatGPT 正常情况下网页均可登录）</font></p>
+<p><font style="color:#000000;"></font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">##这里以 ip：10.10.11.100 举例，重点为端口号</span><br><span class="line">One API      10.10.11.100:4000		账号：root		密码(默认)：123456</span><br><span class="line">open WebUI   10.10.11.100:3100		账号(这里需要自己注册，首次登陆的账号默认为root用户)</span><br><span class="line">FastGPT      10.10.11.100:3000		账号：root		密码：1234</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="JT0l2">九、<font style="color:rgb(34, 34, 34);">配置oneapi，增加渠道</font></h2>
+![](https://cdn.nlark.com/yuque/0/2024/png/33682219/1711716331476-6008d720-7dfe-4354-934d-d081038390bf.png)
+
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);">这里以 gemma:2b 为例，配置项注意：地址和模型要对应起来</font></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711716378541-4fc43348-f002-48dd-96f0-22d556d47789.png"></p>
+<h2 id="VJWRt">十、<font style="color:rgb(34, 34, 34);">配置fastGpt，核心配置 fastgpt 目录下的 config.json 和 docker-compose.yml文件</font></h2>
+<font style="color:rgb(34, 34, 34);">在docker-compose.yml 中增加oneapi的支持：</font>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">environment:</span><br><span class="line">      # root 密码，用户名为: root</span><br><span class="line">      - DEFAULT_ROOT_PSW=1234</span><br><span class="line">      # 中转地址，如果是用官方号，不需要管。务必加 /v1 只改下面这两项</span><br><span class="line">      - OPENAI_BASE_URL=http://你的oneapi地址:4000/v1 </span><br><span class="line">      - CHAT_API_KEY=你的令牌环，从oneapi里面获取</span><br><span class="line">      - DB_MAX_LINK=5 # database max link</span><br><span class="line">      - TOKEN_KEY=any</span><br></pre></td></tr></table></figure>
+
+
+
+<p><font style="color:rgb(34, 34, 34);">config.json 中增加模型支持：</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">##在llmodels 中增加：</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">      &quot;model&quot;: &quot;gemma:2b&quot;,</span><br><span class="line">      &quot;name&quot;: &quot;gemma:2b&quot;,</span><br><span class="line">      &quot;maxContext&quot;: 128000,</span><br><span class="line">      &quot;maxResponse&quot;: 4000,</span><br><span class="line">      &quot;quoteMaxToken&quot;: 100000,</span><br><span class="line">      &quot;maxTemperature&quot;: 1.2,</span><br><span class="line">      &quot;charsPointsPrice&quot;: 0,</span><br><span class="line">      &quot;censor&quot;: false,</span><br><span class="line">      &quot;vision&quot;: true,</span><br><span class="line">      &quot;datasetProcess&quot;: false,</span><br><span class="line">      &quot;toolChoice&quot;: true,</span><br><span class="line">      &quot;functionCall&quot;: false,</span><br><span class="line">      &quot;customCQPrompt&quot;: &quot;&quot;,</span><br><span class="line">      &quot;customExtractPrompt&quot;: &quot;&quot;,</span><br><span class="line">      &quot;defaultSystemChatPrompt&quot;: &quot;&quot;,</span><br><span class="line">      &quot;defaultConfig&quot;: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">##在vectorModels 中增加：</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">      &quot;model&quot;: &quot;m3e&quot;,</span><br><span class="line">      &quot;name&quot;: &quot;M3E&quot;,</span><br><span class="line">      &quot;price&quot;: 0.1,</span><br><span class="line">      &quot;defaultToken&quot;: 500,</span><br><span class="line">      &quot;maxToken&quot;: 1800</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);">处理完后，重启fastGpt</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker-compose  down</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<h2 id="jqli9"><font style="color:rgb(34, 34, 34);">十一、Web页面配置fastgpt 应用和知识库</font></h2>
+:::info
+<font style="color:rgb(34, 34, 34);">配置fastgpt 应用和知识库参考地址：</font>
+
+<p><a target="_blank" rel="noopener" href="https://doc.fastgpt.in/docs/development/"><font style="color:#117CEE;">https://doc.fastgpt.in/docs/development/</font></a></p>
+<p>:::</p>
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:rgb(34, 34, 34);"></font></p>
+<p><font style="color:#DF2A3F;">***</font></p>
+<p><font style="color:#DF2A3F;">如果想要保障大模型正常运行，docker中以下服务状态需要正常</font></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/33682219/1711758257530-8fe476fa-c1de-4e10-ba43-0ef61fd0b493.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2024/10/14/%E6%9C%AC%E5%9C%B0AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/">http://example.com/2024/10/14/%E6%9C%AC%E5%9C%B0AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/09/18/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">Hello World</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#xukox"><span class="toc-number">1.</span> <span class="toc-text">AI大模型搭建参考文档：[https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484&#x2F;](https:&#x2F;&#x2F;www.toutiao.com&#x2F;article&#x2F;7341324149756969484&#x2F;)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AZ7jz"><span class="toc-number"></span> <span class="toc-text">一、 **升级python 、 pip 并安装docker**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#X3wMj"><span class="toc-number"></span> <span class="toc-text">二、安装 M3E</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#z1Jme"><span class="toc-number">1.</span> <span class="toc-text">2.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bvcVc"><span class="toc-number">2.</span> <span class="toc-text">2.2  先安装 sentence-transformers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kNIu4"><span class="toc-number">3.</span> <span class="toc-text">2.3  启用python，命令行敲入 python，由于本地安装名字为 python3，故命令行如下：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fO5r7"><span class="toc-number">4.</span> <span class="toc-text">2.4  拷贝如下代码到python环境中</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%8C%E5%9C%A8%E8%BE%93%E5%87%BA-%E2%80%9Cprint-%E2%80%9C%E2%80%9D-%E2%80%9D%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E9%9C%80%E8%A6%81%E6%8C%89%E4%B8%8B-shift-enter%E6%8C%89%E9%94%AE%EF%BC%9B%E5%90%A6%E5%88%99%E5%8F%AF%E8%83%BD%E4%BC%9A%E4%B8%80%E7%9B%B4%E7%AD%89%E5%BE%85%E4%B8%AD"><span class="toc-number"></span> <span class="toc-text">注意，在输出 “print(“”)”的时候，需要按下 shift+enter按键；否则可能会一直等待中</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bprOz"><span class="toc-number">1.</span> <span class="toc-text">2.5 我们把向量图形化，先按 ctrl+z 退出python环境，执行如下命令，安装图库：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EFxtf"><span class="toc-number">2.</span> <span class="toc-text">2.6 （此步骤目的：开源中文Embedding模型M3E本地安装及接口API实现）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LIFVd"><span class="toc-number"></span> <span class="toc-text">三、安装one-api</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xvfvK"><span class="toc-number"></span> <span class="toc-text">四、安装fastGpt。操作步骤如下图所示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K4bMA"><span class="toc-number"></span> <span class="toc-text">五、初始化mongo数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eaBOX"><span class="toc-number"></span> <span class="toc-text">六、安装 ollama</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xxpUz"><span class="toc-number"></span> <span class="toc-text">七、安装Gemma:2b</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v0Yjr"><span class="toc-number"></span> <span class="toc-text">八、安装 open-webui</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JT0l2"><span class="toc-number"></span> <span class="toc-text">九、配置oneapi，增加渠道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VJWRt"><span class="toc-number"></span> <span class="toc-text">十、配置fastGpt，核心配置 fastgpt 目录下的 config.json 和 docker-compose.yml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jqli9"><span class="toc-number"></span> <span class="toc-text">十一、Web页面配置fastgpt 应用和知识库</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/14/%E6%9C%AC%E5%9C%B0AI%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/" title="Untitled">Untitled</a><time datetime="2024-10-14T00:46:41.170Z" title="Created 2024-10-14 08:46:41">2024-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/18/hello-world/" title="Hello World">Hello World</a><time datetime="2024-09-18T01:16:24.428Z" title="Created 2024-09-18 09:16:24">2024-09-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
